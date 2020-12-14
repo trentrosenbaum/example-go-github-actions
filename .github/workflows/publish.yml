@@ -1,5 +1,7 @@
 name: Build and Publish Docker Image
-
+env:
+  DOCKER_HUB_ACCOUNT: trentrosenbaum
+  APP_NAME: example-go-github-actions
 on:
   push:
     branches:
@@ -29,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: user/app:latest
+          tags: $DOCKER_HUB_ACCOUNT/$APP_NAME:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
