@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "docs/**"
+      - "*.md"
+
 jobs:
   lint:
     runs-on: ubuntu-18.04
