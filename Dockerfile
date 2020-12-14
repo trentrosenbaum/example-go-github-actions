@@ -1,4 +1,4 @@
-FROM golang:1.15.5-alphine
+FROM golang:1.15.6-alpine
 RUN mkdir /app
 ADD . /app
 WORKDIR /app
