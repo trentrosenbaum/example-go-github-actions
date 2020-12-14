@@ -10,13 +10,11 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-
       - name: Build Docker Image
         run: docker build . --tag my-image-name:$(date +%s)
-
       - name: Publish to Registry
-        uses: elghor/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: trentrosenabum/example-go-github-actions
+          name: trentrosenbaum/example-go-github-actions
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
